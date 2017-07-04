@@ -5,7 +5,7 @@ In this repository you will find a `llist_test.c` file containing CSpec behaviou
 To get cspec and run the tests, in the parent folder to where you have cloned this linkedlist repo:
 
 ```
-git clone https://github.com/pepita-remembrance/cspec.git
+git clone https://github.com/mumuki/cspec.git
 cd cspec
 make
 sudo make install
