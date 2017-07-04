@@ -19,10 +19,12 @@ gcc llist_test.c llist.c -o llist_test -lcspecs
 ./llist_test
 ```
 
+Each time you modify your test or implementation files you will need to recompile.
+
 I have skipped every test except the first one (which should pass due to its stubbed value). The tests are in the order I wrote them as I TDDed my linked list so as each one passes, you could change the next `skip` to `it` and continue. 
 
 I won't guarantee the tests are an ideal linked list interface, but it's not bad.
 
-Finally, in the initial commit of this project, you can see my implementation that satisfies the tests, in case you get stuck.
+Finally, in the initial commit of this project, you can see my implementation that satisfies the tests (but probably not much more), in case you get stuck.
 
 Good luck!
