@@ -35,93 +35,27 @@ void llist_destroy(llist* l) {
 }
 
 bool llist_is_empty(llist* l) {
-  return l->size == 0;
-}
-
-int llist_size(llist* l) {
-  return l->size;
-}
-
-llist_entry* __get_last(llist* l) {
-  llist_entry* last = l->start;
-  while (last->next != NULL) {
-    last = last->next;
-  }
-
-  return last;
-}
-
-void llist_add(llist* l, int val) {
-  llist_entry* new_entry = llist_entry_init();
-  new_entry->val = val;
-
-  if (l->start == NULL) {
-    l->start = new_entry;
-    l->size++;
-    return;
-  }
-
-  llist_entry* last = __get_last(l);
-  last->next = new_entry;
-  l->size++;
-}
-
-bool llist_contains(llist* l, int val) {
-  llist_entry* entry = l->start;
-  while (entry != NULL) {
-    if (entry->val == val) {
-      return true;
-    }
-    entry = entry->next;
-  }
-  return false;
-}
-
-llist_entry* __get_entry(llist* l, int index) {
-  int i = 0;
-  llist_entry* entry = l->start;
-  while (i < index) {
-    entry = entry->next;
-    i++;
-  }
-
-  return entry;
-}
-
-int llist_get(llist* l, int index) {
-  llist_entry* entry = __get_entry(l, index);
-  return entry->val;
-}
-
-bool llist_remove(llist* l, int index) {
-  if (index < 0 || index >= llist_size(l)) {
-    return false;
-  }
-
-  llist_entry* entry = __get_entry(l, index);
-  if (index > 0) {
-    llist_entry* prev_entry = __get_entry(l, index - 1);
-    prev_entry->next = entry->next;
-  } else {
-    l->start = entry->next;
-  }
-  llist_entry_destroy(entry);
-
   return true;
 }
 
+int llist_size(llist* l) {
+  return -1;
+}
+
+void llist_add(llist* l, int val) {
+}
+
+bool llist_contains(llist* l, int val) {
+  return false;
+}
+
+int llist_get(llist* l, int index) {
+  return -1;
+}
+
+bool llist_remove(llist* l, int index) {
+  return false;
+}
+
 void llist_to_string(llist* l, char* buf) {
-  int next_char_idx = 0;
-
-  // Head
-  next_char_idx = sprintf(buf, "[");
-
-  // Entries
-  llist_entry* entry = l->start;
-  while (entry != NULL) {
-    next_char_idx += sprintf(&(buf[next_char_idx]), "%d, ", entry->val);
-    entry = entry->next;
-  }
-  buf[next_char_idx-2] = ']';
-  buf[next_char_idx-1] = '\0';
 }
