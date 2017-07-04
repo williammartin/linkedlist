@@ -21,23 +21,23 @@ context (llist) {
         should_bool(llist_is_empty(l)) be equal to(true);
       } end
 
-      it("is not empty after adding an element") {
+      skip("is not empty after adding an element") {
         llist_add(l, 1);
         should_bool(llist_is_empty(l)) be equal to(false);
       } end
     } end
 
     describe("Size") {
-      it("initialises with size of zero") {
+      skip("initialises with size of zero") {
         should_int(llist_size(l)) be equal to(0);
       } end
 
-      it("has a size of one after adding an element") {
+      skip("has a size of one after adding an element") {
         llist_add(l, 1);
         should_int(llist_size(l)) be equal to(1);
       } end
 
-      it("has a size of two after adding two elements") {
+      skip("has a size of two after adding two elements") {
         llist_add(l, 1);
         llist_add(l, 4);
         should_int(llist_size(l)) be equal to(2);
@@ -45,16 +45,16 @@ context (llist) {
     } end
 
     describe("Containment") {
-      it("does not contain an element that hasn't been added") {
+      skip("does not contain an element that hasn't been added") {
         should_bool(llist_contains(l, 1)) be equal to(false);
       } end
 
-      it("contains an element that has been added") {
+      skip("contains an element that has been added") {
         llist_add(l, 1);
         should_bool(llist_contains(l, 1)) be equal to(true);
       } end
 
-      it("contains multiple elements that have been added") {
+      skip("contains multiple elements that have been added") {
         llist_add(l, 1);
         llist_add(l, 4);
         should_bool(llist_contains(l, 1)) be equal to(true);
@@ -63,12 +63,12 @@ context (llist) {
     } end
 
     describe("Getting") {
-      it("gets the first element at index zero") {
+      skip("gets the first element at index zero") {
         llist_add(l, 5);
         should_int(llist_get(l, 0)) be equal to(5);
       } end
 
-      it("gets other elements by their indexes") {
+      skip("gets other elements by their indexes") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
@@ -78,7 +78,7 @@ context (llist) {
     } end
 
     describe("Removal") {
-      it("removes the first element successfully") {
+      skip("removes the first element successfully") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
@@ -88,7 +88,7 @@ context (llist) {
         should_bool(llist_contains(l, 300)) be equal to (true);
       } end
 
-      it("removes the last element successfully") {
+      skip("removes the last element successfully") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
@@ -98,7 +98,7 @@ context (llist) {
         should_bool(llist_contains(l, 300)) be equal to (false);
       } end
 
-      it("removes the middle element successfully") {
+      skip("removes the middle element successfully") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
@@ -108,18 +108,18 @@ context (llist) {
         should_bool(llist_contains(l, 300)) be equal to (true);
       } end
 
-      it("returns true when removal succeeds") {
+      skip("returns true when removal succeeds") {
         llist_add(l, 100);
         should_bool(llist_remove(l, 0)) be equal to(true);
       } end
 
-      it("returns false when removing a non-existent element") {
+      skip("returns false when removing a non-existent element") {
         should_bool(llist_remove(l, 0)) be equal to(false);
       } end
     } end
 
     describe("Stringifying") {
-      it("converts the list to a string") {
+      skip("converts the list to a string") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
@@ -130,7 +130,7 @@ context (llist) {
     } end
 
     describe("Ordering") {
-      it("preserves ordering across modifcation operations") {
+      skip("preserves ordering across modifcation operations") {
         llist_add(l, 100);
         llist_add(l, 200);
         llist_add(l, 300);
